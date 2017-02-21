@@ -45,8 +45,6 @@
 \fi
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
-\usepackage{natbib}
-\bibliographystyle{plainnat}
 \usepackage{longtable}
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
@@ -57,7 +55,7 @@
 \fi
 \hypersetup{breaklinks=true,
             bookmarks=true,
-            pdfauthor={Mateusz Kędzior and Żąćł Źęń},
+            pdfauthor={},
             pdftitle={Sample document},
             colorlinks=true,
             urlcolor=blue,
@@ -78,9 +76,9 @@
 \begin{frontmatter}
 
   \title{Sample document}
-    \author[]{}
-  
-  
+    \author[Some Institute of Technology]{Mateusz Kędzior\corref{c1}}
+   \ead{alice@example.com} 
+   \cortext[c1]{Corresponding Author}
     
   \begin{abstract}
   This is a sample abstract \newline This is the second line of abstract
@@ -91,22 +89,21 @@
 
 \subsection{Sample Text}\label{sample-text}
 
-Let me cite an article: \citep{SampleTitle2016}.
+Let me cite an article: (K\k{e}dzior and Ź\k{e}ń 2018).
 
-Let me refer to a plot: Fig. \ref{fig:pressure}
+Without natbib, in .tex file citep command is not used in output .tex
+file.
 
-\begin{figure}
+An with natbib, it seems there's problem with bibliography compilation.
 
-{\centering \includegraphics[width=0.5\linewidth]{accented_chars_pdf_book__baseRticles_files/figure-latex/pressure-1} 
+\subsection*{References}\label{references}
+\addcontentsline{toc}{subsection}{References}
 
-}
-
-\caption{Ci\'{s}nienie \k{a}, \'{c}, \k{e}, \l{}, \'{n}, \'{o}, \'{s}, \'{z}, \.{z}}\label{fig:pressure}
-\end{figure}
-
-Let me cite different article: \citep{OtherTitle2010}.
-
-\subsection{References}\label{references}
+\hypertarget{refs}{}
+\hypertarget{ref-SampleTitle2016}{}
+K\k{e}dzior, Mateusz, and Ż\k{a}ćł Ź\k{e}ń. 2018. ``This Is Sample Title
+Only \{A\} \{ł\}.'' \emph{Some Journal} 99: 21--31.
+\url{http://letmegooglethat.com/}.
 
 \end{document}
 

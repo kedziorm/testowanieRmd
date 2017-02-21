@@ -1,0 +1,25 @@
+---
+title: "Sample document"
+abstract: "This is a sample abstract \\newline This is the second line of abstract \\par \\textbf{Keywords:} keywordA, keywordB"
+author:
+  - name: Mateusz Kędzior
+    email: alice@example.com
+    affiliation: Some Institute of Technology
+    footnote: Corresponding Author
+output:
+  bookdown::pdf_book:
+    base_format: rticles::elsevier_article
+    keep_tex: true
+bibliography: bibliography_escaped.bib
+---
+
+## Sample Text
+
+Let me cite an article: [@SampleTitle2016].
+
+Without natbib, in .tex file citep  command is not used in output .tex file.
+
+An with natbib, it seems there's problem with bibliography compilation.
+
+## References
+
