@@ -25,10 +25,12 @@
 \usepackage{hyperref}
 \hypersetup{unicode=true,
             pdftitle={Sample document},
-            pdfauthor={Mateusz Kdzior and .\{Z\}'\{c\} '\{Z\}'\{n\}},
+            pdfauthor={Mateusz Kędzior and Żąćł Źęń},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{plainnat}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -77,7 +79,7 @@
   \title{Sample document}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-  \author{Mateusz K\k{e}dzior and .\{Z\}\k{a}'\{c\}\l{} '\{Z\}\k{e}'\{n\}}
+  \author{Mateusz Kędzior and Żąćł Źęń}
   \preauthor{\centering\large\emph}
   \postauthor{\par}
   \date{}
@@ -87,9 +89,8 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This \k{a} \k{e} '\{c\} '\{z\} \l{} '\{n\} is a sample abstract
-\newline This is the second line of abstract \par \textbf{Keywords:}
-keywordA, keywordB
+This is a sample abstract \newline This is the second line of abstract
+\par \textbf{Keywords:} keywordA, keywordB
 \end{abstract}
 
 {
@@ -98,17 +99,7 @@ keywordA, keywordB
 }
 \subsection{Sample Text}\label{sample-text}
 
-I replaced characters using my script:
-\url{https://gist.github.com/kedziorm/1fda41a0f79d5738c370620589dfdf2b}
-
-Let me cite an article: (and\\
-.Z\\
-ka\\
-'c\\
-l\\
-'Z\\
-ke\\
-'n 2018).
+Let me cite an article: \citep{SampleTitle2016}.
 
 Let me refer to a plot: Fig. \ref{fig:pressure}
 
@@ -121,34 +112,11 @@ Let me refer to a plot: Fig. \ref{fig:pressure}
 \caption{Ci\'{s}nienie \k{a}, \'{c}, \k{e}, \l{}, \'{n}, \'{o}, \'{s}, \'{z}, \.{z}}\label{fig:pressure}
 \end{figure}
 
-Let me cite different article: (and\\
-.Z\\
-ka\\
-'c\\
-l\\
-'Z\\
-ke\\
-'n 2020).
+Let me cite different article: \citep{OtherTitle2010}.
 
-\subsection*{References}\label{references}
-\addcontentsline{toc}{subsection}{References}
+\subsection{References}\label{references}
 
-\hypertarget{refs}{}
-\hypertarget{ref-SampleTitle2016}{}
-and\\
-.Z\\
-ka\\
-'c\\
-l\\
-'Z\\
-ke\\
-'n, Mateusz K\\
-kedzior. 2018. ``This Is Sample Title Only \{ KA\} \{ L\}.'' \emph{Some
-Journal} 99: 21--31. \url{http://letmegooglethat.com/}.
-
-\hypertarget{ref-OtherTitle2010}{}
----------. 2020. ``This Is Different KA Title Only.'' \emph{Some
-Journal} 150: 21--31. \url{http://letmegooglethat.com/}.
+\bibliography{bibliography_escaped.bib}
 
 
 \end{document}

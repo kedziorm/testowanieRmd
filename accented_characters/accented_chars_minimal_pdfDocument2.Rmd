@@ -1,16 +1,15 @@
 ---
 title: "Sample document"
-abstract: "This \\k{a} \\k{e} \\'{c} \\'{z} \\l{} \\'{n} is a sample abstract \\newline This is the second line of abstract \\par \\textbf{Keywords:} keywordA, keywordB"
-author: "Mateusz K\\k{e}dzior and \\.{Z}\\k{a}\\'{c}\\l{} \\'{Z}\\k{e}\\'{n}"
+abstract: "This is a sample abstract \\newline This is the second line of abstract \\par \\textbf{Keywords:} keywordA, keywordB"
+author: "Mateusz Kędzior and Żąćł Źęń"
 output: 
   bookdown::pdf_document2:
     keep_tex: true
+    citation_package: natbib
 bibliography: bibliography_escaped.bib
 ---
 
 ## Sample Text
-
-I replaced characters using my script: https://gist.github.com/kedziorm/1fda41a0f79d5738c370620589dfdf2b
 
 Let me cite an article: [@SampleTitle2016].
 

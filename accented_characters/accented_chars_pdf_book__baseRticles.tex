@@ -45,6 +45,8 @@
 \fi
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
 \usepackage{longtable}
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
@@ -55,7 +57,7 @@
 \fi
 \hypersetup{breaklinks=true,
             bookmarks=true,
-            pdfauthor={Mateusz Kdzior and .\{Z\}'\{c\} '\{Z\}'\{n\}},
+            pdfauthor={Mateusz Kędzior and Żąćł Źęń},
             pdftitle={Sample document},
             colorlinks=true,
             urlcolor=blue,
@@ -81,19 +83,15 @@
   
     
   \begin{abstract}
-  This \k{a} \k{e} '\{c\} '\{z\} \l{} '\{n\} is a sample abstract
-  \newline This is the second line of abstract \par \textbf{Keywords:}
-  keywordA, keywordB
+  This is a sample abstract \newline This is the second line of abstract
+  \par \textbf{Keywords:} keywordA, keywordB
   \end{abstract}
   
  \end{frontmatter}
 
 \subsection{Sample Text}\label{sample-text}
 
-I replaced characters using my script:
-https://gist.github.com/kedziorm/1fda41a0f79d5738c370620589dfdf2b
-
-Let me cite an article: {[}@SampleTitle2016{]}.
+Let me cite an article: \citep{SampleTitle2016}.
 
 Let me refer to a plot: Fig. \ref{fig:pressure}
 
@@ -106,7 +104,7 @@ Let me refer to a plot: Fig. \ref{fig:pressure}
 \caption{Ci\'{s}nienie \k{a}, \'{c}, \k{e}, \l{}, \'{n}, \'{o}, \'{s}, \'{z}, \.{z}}\label{fig:pressure}
 \end{figure}
 
-Let me cite different article: {[}@OtherTitle2010{]}.
+Let me cite different article: \citep{OtherTitle2010}.
 
 \subsection{References}\label{references}
 
