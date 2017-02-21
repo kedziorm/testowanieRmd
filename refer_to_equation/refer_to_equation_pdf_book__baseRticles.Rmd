@@ -1,0 +1,21 @@
+---
+title: "Sample document"
+abstract: "This is a sample abstract \\newline This is the second line of abstract \\par \\textbf{Keywords:} keywordA, keywordB"
+author: "Mateusz Kędzior and Żąćł Źęń"
+output:
+  bookdown::pdf_book:
+    base_format: rticles::elsevier_article
+    keep_tex: true
+
+---
+
+## Sample Text
+
+Let me refer to an equation: Eq. \@ref(eq:MaxwellFaraday)
+
+### Equation
+
+\begin{equation} 
+  \oint _{\partial \Sigma }\mathbf {E} \cdot \mathrm {d} {\boldsymbol {\ell }}=-{\frac {\mathrm {d} }{\mathrm {d} t}}\iint _{\Sigma }\mathbf {B} \cdot \mathrm {d} \mathbf {S} 
+  (\#eq:MaxwellFaraday)
+\end{equation} 
