@@ -1,0 +1,154 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Sample document},
+            pdfauthor={Mateusz Kdzior and .\{Z\}'\{c\} '\{Z\}'\{n\}},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Sample document}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Mateusz K\k{e}dzior and .\{Z\}\k{a}'\{c\}\l{} '\{Z\}\k{e}'\{n\}}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \date{}
+  \predate{}\postdate{}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+This \k{a} \k{e} '\{c\} '\{z\} \l{} '\{n\} is a sample abstract
+\newline This is the second line of abstract \par \textbf{Keywords:}
+keywordA, keywordB
+\end{abstract}
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\subsection{Sample Text}\label{sample-text}
+
+I replaced characters using my script:
+\url{https://gist.github.com/kedziorm/1fda41a0f79d5738c370620589dfdf2b}
+
+Let me cite an article: (and\\
+.Z\\
+ka\\
+'c\\
+l\\
+'Z\\
+ke\\
+'n 2018).
+
+Let me refer to a plot: Fig. \ref{fig:pressure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{accented_chars_minimal_pdfDocument2_files/figure-latex/pressure-1} 
+
+}
+
+\caption{Ci\'{s}nienie \k{a}, \'{c}, \k{e}, \l{}, \'{n}, \'{o}, \'{s}, \'{z}, \.{z}}\label{fig:pressure}
+\end{figure}
+
+Let me cite different article: (and\\
+.Z\\
+ka\\
+'c\\
+l\\
+'Z\\
+ke\\
+'n 2020).
+
+\subsection*{References}\label{references}
+\addcontentsline{toc}{subsection}{References}
+
+\hypertarget{refs}{}
+\hypertarget{ref-SampleTitle2016}{}
+and\\
+.Z\\
+ka\\
+'c\\
+l\\
+'Z\\
+ke\\
+'n, Mateusz K\\
+kedzior. 2018. ``This Is Sample Title Only \{ KA\} \{ L\}.'' \emph{Some
+Journal} 99: 21--31. \url{http://letmegooglethat.com/}.
+
+\hypertarget{ref-OtherTitle2010}{}
+---------. 2020. ``This Is Different KA Title Only.'' \emph{Some
+Journal} 150: 21--31. \url{http://letmegooglethat.com/}.
+
+
+\end{document}
