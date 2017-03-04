@@ -1,0 +1,42 @@
+---
+title: Additional brackets around year in citations
+author:
+  - name: Mateusz Kędzior
+    email: alice@sample.com
+    affiliation: WUT
+    footnote: Corresponding Author
+abstract: |
+  First line
+
+  The second line
+
+keywords: some \sep thing \sep some \sep where
+bibliography: listb.bib # I get .bib file from http://shelah.logic.at/eindex.html
+csl: elsevier-harvard.csl # I get style from: https://www.zotero.org/styles/
+link-citations: true
+
+output:
+   bookdown::pdf_book:
+    base_format: rticles::elsevier_article
+    keep_tex: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# What I receive
+
+Cite only one article: @Sh:2
+
+It was mentioned in: @Sh:1; @Sh:2; @Sh:3
+
+It was mentioned in [@Sh:1; @Sh:2; @Sh:3]
+
+# Expected result
+
+I wish to have something like:
+
+It was mentioned in (Shelah, 1969b; Shelah, 1969a; Shelah, 1970)
+
+# References

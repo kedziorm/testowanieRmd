@@ -1,0 +1,130 @@
+\documentclass[]{elsarticle} %review=doublespace preprint=single 5p=2 column
+%%% Begin My package additions %%%%%%%%%%%%%%%%%%%
+\usepackage[hyphens]{url}
+\usepackage{lineno} % add
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\bibliographystyle{elsarticle-harv}
+\biboptions{sort&compress} % For natbib
+\usepackage{graphicx}
+\usepackage{booktabs} % book-quality tables
+%% Redefines the elsarticle footer
+%\makeatletter
+%\def\ps@pprintTitle{%
+% \let\@oddhead\@empty
+% \let\@evenhead\@empty
+% \def\@oddfoot{\it \hfill\today}%
+% \let\@evenfoot\@oddfoot}
+%\makeatother
+
+% A modified page layout
+\textwidth 6.75in
+\oddsidemargin -0.15in
+\evensidemargin -0.15in
+\textheight 9in
+\topmargin -0.5in
+%%%%%%%%%%%%%%%% end my additions to header
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \usepackage{fontspec}
+  \ifxetex
+    \usepackage{xltxtra,xunicode}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{longtable}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={Additional brackets around year in citations},
+            colorlinks=true,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Pandoc toggle for numbering sections (defaults to be off)
+% Pandoc header
+
+
+\usepackage[nomarkers]{endfloat}
+
+\begin{document}
+\begin{frontmatter}
+
+  \title{Additional brackets around year in citations}
+    \author[WUT]{Mateusz Kędzior\corref{c1}}
+   \ead{alice@sample.com} 
+   \cortext[c1]{Corresponding Author}
+    
+  \begin{abstract}
+  First line
+  
+  The second line
+  \end{abstract}
+   \begin{keyword} some \sep thing \sep some \sep where \sep \end{keyword}
+ \end{frontmatter}
+
+\section{What I receive}\label{what-i-receive}
+
+Cite only one article: Shelah
+(\protect\hyperlink{ref-Sh:2}{1969}\protect\hyperlink{ref-Sh:2}{a})
+
+It was mentioned in: Shelah
+(\protect\hyperlink{ref-Sh:1}{1969}\protect\hyperlink{ref-Sh:1}{b});
+Shelah
+(\protect\hyperlink{ref-Sh:2}{1969}\protect\hyperlink{ref-Sh:2}{a});
+Shelah (\protect\hyperlink{ref-Sh:3}{1970})
+
+It was mentioned in (Shelah, \protect\hyperlink{ref-Sh:3}{1970},
+\protect\hyperlink{ref-Sh:1}{1969}\protect\hyperlink{ref-Sh:1}{b},
+\protect\hyperlink{ref-Sh:2}{1969}\protect\hyperlink{ref-Sh:2}{a})
+
+\section{Expected result}\label{expected-result}
+
+I wish to have something like:
+
+It was mentioned in (Shelah, 1969b; Shelah, 1969a; Shelah, 1970)
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\hypertarget{ref-Sh:3}{}
+Shelah, S., 1970. Finite diagrams stable in power. Annals of
+Mathematical Logic 2, 69--118.
+
+\hypertarget{ref-Sh:2}{}
+Shelah, S., 1969a. Note on a min-max problem of Leo Moser. Journal of
+Combinatorial Theory 6, 298--300.
+
+\hypertarget{ref-Sh:1}{}
+Shelah, S., 1969b. Stable theories. Israel Journal of Mathematics 7,
+187--202.
+
+\end{document}
+
+
