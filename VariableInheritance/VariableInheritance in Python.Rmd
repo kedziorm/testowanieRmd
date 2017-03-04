@@ -1,0 +1,21 @@
+---
+title: "Variables inheritance in next chunk"
+output: pdf_document
+---
+
+## Set variable
+
+```{python defineVector}
+w=[2,6,7,5,7,8,5,7,6]
+```
+
+http://stackoverflow.com/questions/42595620/variables-set-in-previous-chunks-are-inherited-in-case-of-r-chunks-only-r-markd
+
+## Print mean
+
+```{python meanValue, echo=TRUE}
+# Following line results in: <module> NameError: name 'w' is not defined
+print(sum(w) / float(len(w)))
+# However if I repeat line: w=[2,6,7,5,7,8,5,7,6]
+# before print, document works - compiles to PDF
+```

@@ -1,0 +1,18 @@
+---
+title: "Variables inheritance in next chunk"
+output: pdf_document
+---
+
+## Set variable
+
+```{r defineVector}
+w = as.vector(c(2,6,7,5,7,8,5,7,6))
+```
+
+http://stackoverflow.com/questions/42595620/variables-set-in-previous-chunks-are-inherited-in-case-of-r-chunks-only-r-markd
+
+## Print mean
+
+```{r meanValue, echo=TRUE}
+mean(w)
+```
